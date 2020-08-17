@@ -14,6 +14,7 @@ import { RecetaComponent } from './components/receta/receta.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CommentsPipe } from './pipes/comments.pipe';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RecetaComponent,
     CategoriasComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CommentsPipe
   ],
   imports: [
     BrowserModule,

@@ -2,8 +2,9 @@
     <div class="container">
         <h2>Recetas</h2>
         <div class="row">
+
+            <!-- Filtros -->
             <div class="col-3">
-                <h3>Filtros</h3>
 
                 <div class="form-group">
                     <mat-form-field appearance="outline">
@@ -13,6 +14,8 @@
 
                     </mat-form-field>
                 </div>
+
+                <h3>Filtros</h3>
 
                 <div class="form-group">
                     <mat-form-field appearance="outline">
@@ -36,20 +39,29 @@
                     </mat-form-field>
                 </div>
 
-
-
-
-
-
             </div>
+            <!-- end Filtros -->
 
             <div class="col-9">
                 <div class="row">
-                    <div *ngFor="let receta of topRecetas" class="col-4 mb-4">
-                        <img class="img-fluid mb-3" src="http://placekitten.com/g/400/250" alt="">
-                        <h3 class="mb-2">Lorem ipsum dolor sit amet.</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dignissimos aperiam itaque at
-                            adipisci iusto vel aliquam esse asperiores eum!</p>
+                    <div class="col-12">
+                        <mat-card *ngFor="let receta of recetas" class="mb-3">
+
+                            <img class="img-fluid mr-3"
+                                [src]="receta.img != null ? './assets/recetas/' + receta.img : './assets/recetas/placeholder.jpg'"
+                                alt="{{receta.title}}" routerLink="/receta">
+                            <div>
+                                <h3 class="card-title mb-2" routerLink="/receta">{{ receta.title }}</h3>
+                                <p class="card-description">{{ receta.description | comments }}</p>
+
+                                <div class="receta-detalles">
+                                    <span>Porciones: {{ receta.porciones }}</span>
+                                    <span>Dificultad: {{ receta.dificultad }}</span>
+                                </div>
+                            </div>
+
+                        </mat-card>
+
                     </div>
                 </div>
             </div>

@@ -1,3 +1,26 @@
 mat-form-field {
     width: 100%;
 }
+
+// Card
+mat-card {
+    display: flex;
+}
+
+mat-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+mat-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+mat-card .receta-detalles {
+    display: flex;
+    flex-direction: column;
+}
