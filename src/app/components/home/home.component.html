@@ -1,0 +1,41 @@
+<section>
+    <img class="img-fluid" src="./assets/fondo-2.jpg" alt="">
+</section>
+
+<section class="py-4">
+    <div class="container">
+        <h2>Recetas populares</h2>
+        <div class="row">
+            <div *ngFor="let receta of topRecetas" class="col-4 mb-4">
+                <img class="img-fluid mb-3" src="http://placekitten.com/g/400/250" alt="">
+                <h3 class="mb-2">Lorem ipsum dolor sit amet.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dignissimos aperiam itaque at adipisci
+                    iusto vel aliquam esse asperiores eum!</p>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center py-2">
+            <button mat-flat-button color="primary" routerLink="recetas">Ver todas las recetas</button>
+
+        </div>
+    </div>
+</section>
+
+<section class="app py-4">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-5">
+                <img class="img-fluid" src="./assets/app.jpg" alt="">
+            </div>
+            <div class="col-5 d-flex flex-column justify-content-center align-items-start">
+                <h2>¿No tenes nuestra app?</h2>
+                <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae suscipit consequuntur
+                    enim optio
+                    recusandae minus aperiam sed hic veniam quam?</p>
+                <button mat-flat-button color="primary">descargá la APP</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,13 +1,13 @@
 <mat-toolbar color="primary">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col d-flex">
                 <span class="mr-3">Cook App</span>
                 <div class="d-flex w-100">
-                    <button mat-button>Home</button>
-                    <button mat-button>Recetas</button>
-                    <button mat-button>Categoría</button>
-                    <button class="ml-auto" mat-button>
+                    <button mat-button routerLink="/">Home</button>
+                    <button mat-button routerLink="/recetas">Recetas</button>
+                    <button mat-button routerLink="/categorias">Categorías</button>
+                    <button class="ml-auto" mat-stroked-button>
                         <mat-icon class="mr-2">account_circle</mat-icon>
                         Login
                     </button>
