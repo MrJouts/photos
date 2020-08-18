@@ -12,7 +12,7 @@ export const RECETAS: any[] = [
         title: "Pan de Pita o pan árabe, super fácil!🧡",
         description: null,
         img: "pan_pita.jpg",
-        dificultad: "intermedio",
+        dificultad: "intermedia",
         porciones: 2
     },
     {
@@ -28,7 +28,7 @@ export const RECETAS: any[] = [
         title: "Masas secas low carb",
         description: "Para el cafe o el té, una ricuraaaa!",
         img: "masas.jpg",
-        dificultad: "intermedio",
+        dificultad: "intermedia",
         porciones: 1
     },
     {
@@ -36,7 +36,7 @@ export const RECETAS: any[] = [
         title: "Tarta de puerro y cebolla",
         description: null,
         img: null,
-        dificultad: "intermedio",
+        dificultad: "intermedia",
         porciones: 5
     },
     {

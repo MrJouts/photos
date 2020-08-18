@@ -8,9 +8,10 @@ import { RecetaService } from '../../services/receta.service'
   styleUrls: ['./recetas.component.scss']
 })
 export class RecetasComponent implements OnInit {
-  recetas: any[] = [1, 2, 3, 4, 5, 6];
+  recetas: any[] = [];
+  recetasFiltradas: any[] = [];
   dificultades = new FormControl();
-  dificultadesList: string[] = ['Facil', 'Intermedio', 'Dificil'];
+  dificultadesList: string[] = ['facil', 'intermedia', 'dificil'];
 
   porciones = new FormControl();
   porcionesList: string[] = ['1 persona', '2 personas', '3 personas', '4 personas', '+4 personas'];
@@ -22,7 +23,15 @@ export class RecetasComponent implements OnInit {
   }
 
   getRecetas() {
-    this.recetaService.getAll().subscribe(recetas => this.recetas = recetas);
+    this.recetaService.getAll().subscribe(recetas => {
+      this.recetas = recetas
+      this.recetasFiltradas = recetas
+    });
   }
 
+  dificultadChange() {
+    this.recetasFiltradas = (this.dificultades.value.length > 0)
+      ? this.recetas.filter(receta => this.dificultades.value.includes(receta.dificultad))
+      : this.recetasFiltradas = this.recetas;
+  }
 }

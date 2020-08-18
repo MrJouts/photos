@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <mat-form-field appearance="outline">
                         <mat-label>Dificultad</mat-label>
-                        <mat-select [formControl]="dificultades" multiple>
+                        <mat-select [formControl]="dificultades" multiple (selectionChange)="dificultadChange()">
                             <mat-option *ngFor="let dificultad of dificultadesList" [value]="dificultad">
                                 {{dificultad}}
                             </mat-option>
@@ -45,7 +45,7 @@
             <div class="col-9">
                 <div class="row">
                     <div class="col-12">
-                        <mat-card *ngFor="let receta of recetas" class="mb-3">
+                        <mat-card *ngFor="let receta of recetasFiltradas" class="mb-3">
 
                             <img class="img-fluid mr-3"
                                 [src]="receta.img != null ? './assets/recetas/' + receta.img : './assets/recetas/placeholder.jpg'"
