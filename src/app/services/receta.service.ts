@@ -12,4 +12,9 @@ export class RecetaService {
   getAll() {
     return of(RECETAS);
   }
+
+  getById(id) {
+    console.log('receta', RECETAS.find(receta => receta.id == id))
+    return RECETAS.find(receta => receta.id == id);
+  }
 }

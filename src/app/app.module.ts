@@ -15,6 +15,7 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CommentsPipe } from './pipes/comments.pipe';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CommentsPipe } from './pipes/comments.pipe';
     CategoriasComponent,
     HomeComponent,
     FooterComponent,
-    CommentsPipe
+    CommentsPipe,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

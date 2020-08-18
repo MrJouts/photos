@@ -47,4 +47,13 @@ export const RECETAS: any[] = [
         dificultad: "dificil",
         porciones: 6
     },
+    {
+        id: 6,
+        title: "Empanadas de espinaca 💕",
+        description: null,
+        img: "empanadas.png",
+        dificultad: "facil",
+        porciones: 4
+    },
+
 ];

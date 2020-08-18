@@ -10,11 +10,17 @@ import { RecetaService } from '../../services/receta.service'
 export class RecetasComponent implements OnInit {
   recetas: any[] = [];
   recetasFiltradas: any[] = [];
+
+  searchText = new FormControl();
+
+
   dificultades = new FormControl();
   dificultadesList: string[] = ['facil', 'intermedia', 'dificil'];
 
   porciones = new FormControl();
   porcionesList: string[] = ['1 persona', '2 personas', '3 personas', '4 personas', '+4 personas'];
+
+
 
   constructor(private recetaService: RecetaService) { }
 
@@ -34,4 +40,5 @@ export class RecetasComponent implements OnInit {
       ? this.recetas.filter(receta => this.dificultades.value.includes(receta.dificultad))
       : this.recetasFiltradas = this.recetas;
   }
+
 }
