@@ -16,6 +16,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CommentsPipe } from './pipes/comments.pipe';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { GdmFormatPipe } from './pipes/gdm-format.pipe';
+import { LocalDatePipe } from './pipes/local-date.pipe';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
     HomeComponent,
     FooterComponent,
     CommentsPipe,
-    SearchFilterPipe
+    SearchFilterPipe,
+    GdmFormatPipe,
+    LocalDatePipe
   ],
   imports: [
     BrowserModule,
