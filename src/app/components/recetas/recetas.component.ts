@@ -20,8 +20,6 @@ export class RecetasComponent implements OnInit {
   porciones = new FormControl();
   porcionesList: string[] = ['1 persona', '2 personas', '3 personas', '4 personas', '+4 personas'];
 
-
-
   constructor(private recetaService: RecetaService) { }
 
   ngOnInit(): void {

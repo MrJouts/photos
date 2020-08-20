@@ -1,0 +1,40 @@
+<section class="py-4">
+    <div class="container">
+        <h2>Registro</h2>
+        <div class="row justify-content-center">
+            <div class="col-4">
+
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput type="text">
+                        <mat-icon matSuffix>perm_identity</mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password">
+                        <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Repetir contraseña</mat-label>
+                        <input matInput type="password">
+                        <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <button mat-flat-button color="primary" class="d-block w-100 p-1">Registrarme</button>
+
+                <div class="py-3 text-center">
+                    <span>Ya tenés una cuenta? <a routerLink="/login">Ingresar</a></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

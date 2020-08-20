@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecetaService } from '../../services/receta.service'
 
 @Component({
   selector: 'app-home',
@@ -6,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  topRecetas: any[] = [];
 
-  constructor() { }
+  constructor(private recetaService: RecetaService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.getRecetas();
+  }
+
+  getRecetas() {
+    this.recetaService.getAll().subscribe(recetas => {
+      this.topRecetas = recetas.slice(0, 6);
+
+    });
+  }
 
 }

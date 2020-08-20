@@ -18,6 +18,8 @@ import { CommentsPipe } from './pipes/comments.pipe';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { GdmFormatPipe } from './pipes/gdm-format.pipe';
 import { LocalDatePipe } from './pipes/local-date.pipe';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { LocalDatePipe } from './pipes/local-date.pipe';
     CommentsPipe,
     SearchFilterPipe,
     GdmFormatPipe,
-    LocalDatePipe
+    LocalDatePipe,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
