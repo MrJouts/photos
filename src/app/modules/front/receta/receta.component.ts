@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RecetaService } from 'src/app/services/receta.service';
 import { ActivatedRoute } from '@angular/router';
+import { RecetaService } from '@core/services/receta.service';
 
-ActivatedRoute
+
 
 @Component({
   selector: 'app-receta',

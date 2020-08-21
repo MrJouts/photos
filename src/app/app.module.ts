@@ -6,41 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MaterialModule } from './material';
 
-import { HeaderComponent } from './components/header/header.component';
-import { RecetasComponent } from './components/recetas/recetas.component';
-import { RecetaComponent } from './components/receta/receta.component';
-import { CategoriasComponent } from './components/categorias/categorias.component';
-import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { CommentsPipe } from './pipes/comments.pipe';
-import { SearchFilterPipe } from './pipes/search-filter.pipe';
-import { LoginComponent } from './components/login/login.component';
-import { RegistroComponent } from './components/registro/registro.component';
-
+import { CoreModule } from '@core/core.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    RecetasComponent,
-    RecetaComponent,
-    CategoriasComponent,
-    HomeComponent,
-    FooterComponent,
-    CommentsPipe,
-    SearchFilterPipe,
-    LoginComponent,
-    RegistroComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

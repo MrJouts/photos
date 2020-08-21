@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RecetaService } from '../../services/receta.service'
+import { RecetaService } from '@core/services/receta.service';
+
 
 @Component({
   selector: 'app-home',
