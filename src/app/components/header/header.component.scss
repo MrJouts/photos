@@ -1,3 +1,23 @@
 .brand {
     cursor: pointer;
 }
+
+.search-form {
+    position: relative;
+    width: 60%;
+
+    input {
+        border-radius: 3px;
+        border: none;
+        font-size: 15px;
+        padding: 0.25rem 1rem;
+        width: 100%;
+    }
+
+    button {
+        position: absolute;
+        right: 0.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
