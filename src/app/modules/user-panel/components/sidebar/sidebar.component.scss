@@ -1,0 +1,8 @@
+mat-list {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    mat-list-item:last-of-type {
+        margin-top: auto;
+    }
+}

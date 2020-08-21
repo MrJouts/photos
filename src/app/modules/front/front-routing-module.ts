@@ -8,19 +8,18 @@ import { RecetaComponent } from './receta/receta.component';
 import { RegistroComponent } from './registro/registro.component';
 import { LayoutComponent } from './layout/layout.component';
 
-const routes: Routes = [
-    {
-        path: '', component: LayoutComponent,
-        children: [
-            { path: '', component: HomeComponent },
-            { path: "recetas", component: RecetasComponent },
-            { path: "receta/:id", component: RecetaComponent },
-            { path: "categorias", component: CategoriasComponent },
-            { path: "login", component: LoginComponent },
-            { path: "registro", component: RegistroComponent },
-        ]
-    },
-];
+
+const routes: Routes = [{
+    path: '', component: LayoutComponent,
+    children: [
+        { path: '', component: HomeComponent },
+        { path: "recetas", component: RecetasComponent },
+        { path: "receta/:id", component: RecetaComponent },
+        { path: "categorias", component: CategoriasComponent },
+        { path: "login", component: LoginComponent },
+        { path: "registro", component: RegistroComponent },
+    ]
+}];
 
 
 @NgModule({
