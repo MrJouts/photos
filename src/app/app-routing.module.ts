@@ -6,6 +6,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./modules/front/front.module').then(m => m.FrontModule)
   },
+  {
+    path: 'panel',
+    loadChildren: () => import('./modules/user-panel/user-panel.module').then(m => m.UserPanelModule)
+  },
 ];
 
 @NgModule({
