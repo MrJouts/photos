@@ -38,7 +38,7 @@ $primary-palette: (
 
 $my-custom-primary: mat-palette($primary-palette);
 $my-custom-accent: mat-palette($mat-pink, 100, 500, A100);
-$my-custom-warn: mat-palette($mat-lime);
+$my-custom-warn: mat-palette($mat-red);
 
 $my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
 

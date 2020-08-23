@@ -5,4 +5,23 @@ mat-form-field {
 // Custom form
 .form-control {
     margin-bottom: 1.25rem;
+
+    > label {
+        font-weight: 500;
+    }
+}
+
+#form-ingredientes {
+    .mat-form-field:not(.mat-form-field-should-float) .mat-form-field-label-wrapper {
+        top: -18px;
+    }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 0;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 0.3em 0 0.7em;
+        line-height: 120%;
+    }
 }

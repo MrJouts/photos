@@ -13,5 +13,17 @@
                 <p>Porciones: {{ receta.porciones }}</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-4">
+                <h2>Ingredientes</h2>
+                <mat-list role="list">
+                    <mat-list-item *ngFor="let item of receta.ingredientes" role="listitem">{{item.ingrediente}}
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div class="col-8">
+                <h2>Preparación</h2>
+            </div>
+        </div>
     </div>
 </section>

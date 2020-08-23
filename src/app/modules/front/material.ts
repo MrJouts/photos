@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { MatListModule } from '@angular/material/list';
 
 const components = [
     MatButtonModule,
@@ -20,7 +20,8 @@ const components = [
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatListModule
 ]
 
 @NgModule({
