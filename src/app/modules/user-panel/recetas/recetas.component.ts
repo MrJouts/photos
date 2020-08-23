@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecetasComponent implements OnInit {
 
+  recetas = new Array(10)
   constructor() { }
 
   ngOnInit(): void {

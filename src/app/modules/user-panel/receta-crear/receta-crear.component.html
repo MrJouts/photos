@@ -1,0 +1,44 @@
+<section>
+    <h2>Crear receta</h2>
+    <div class="row">
+        <div class="col-8">
+
+            <form [formGroup]="recetaForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Título</mat-label>
+                    <input formControlName="title" matInput placeholder="¿Que vas a hacer de rico?">
+
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción</mat-label>
+                    <textarea formControlName="description" matInput></textarea>
+                </mat-form-field>
+
+                <div class="form-control">
+                    <label>Dificultad</label>
+                    <mat-radio-group aria-label="Select an option" color="primary" formControlName="dificultad">
+                        <mat-radio-button class="example-radio-button" *ngFor="let dificultad of dificultadList"
+                            [value]="dificultad">
+                            {{ dificultad }}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div class="form-control">
+                    <label>Porciones</label>
+                    <mat-radio-group aria-label="Select an option" color="primary" formControlName="porciones">
+                        <mat-radio-button class="example-radio-button" *ngFor="let porcion of porcionesList"
+                            [value]="porcion">
+                            {{ porcion }}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <button mat-flat-button color="primary" type="submit" [disabled]="!recetaForm.valid">Crear
+                    receta</button>
+            </form>
+
+        </div>
+    </div>
+</section>

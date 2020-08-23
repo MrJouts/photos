@@ -19,7 +19,7 @@ export class RecetaComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.params.subscribe(params => {
-      this.id = +params['id'];
+      this.id = params['id'];
       this.getById(this.id)
     });
   }

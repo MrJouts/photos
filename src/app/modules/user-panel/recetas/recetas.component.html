@@ -1,1 +1,19 @@
-<p>recetas works!</p>
+<section>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Mis Recetas</h2>
+        <button mat-flat-button color="primary" routerLink="/panel/recetas/crear">Nueva receta</button>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let receta of recetas" class="col-6 mb-4">
+            <mat-card>
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"
+                        style="background-image: url('./assets/recetas/empanadas.png');"></div>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle class="mb-0">Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </div>
+</section>

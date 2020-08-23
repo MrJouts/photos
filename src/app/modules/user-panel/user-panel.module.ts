@@ -9,6 +9,10 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { RecetasComponent } from './recetas/recetas.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AmigosComponent } from './amigos/amigos.component';
+import { NovedadesComponent } from './novedades/novedades.component';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { RecetaCrearComponent } from './receta-crear/receta-crear.component';
 
 
 @NgModule({
@@ -18,6 +22,10 @@ import { HeaderComponent } from './components/header/header.component';
     RecetasComponent,
     SidebarComponent,
     HeaderComponent,
+    AmigosComponent,
+    NovedadesComponent,
+    ConfiguracionComponent,
+    RecetaCrearComponent,
   ],
   imports: [
     CommonModule,

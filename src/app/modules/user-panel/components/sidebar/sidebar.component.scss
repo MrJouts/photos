@@ -1,8 +1,31 @@
+@import "variables";
+
 mat-list {
     height: 70vh;
     display: flex;
     flex-direction: column;
-    mat-list-item:last-of-type {
+    cursor: pointer;
+}
+
+mat-list-item {
+    &.selected {
+        color: $primary-color;
+
+        mat-icon {
+            color: $primary-color;
+        }
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: $primary-color;
+
+        mat-icon {
+            color: $primary-color;
+        }
+    }
+
+    &:last-of-type {
         margin-top: auto;
     }
 }
