@@ -13,6 +13,8 @@ import { AmigosComponent } from './amigos/amigos.component';
 import { NovedadesComponent } from './novedades/novedades.component';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
 import { RecetaCrearComponent } from './receta-crear/receta-crear.component';
+import { RecetaEditarComponent } from './receta-editar/receta-editar.component';
+import { RecetaFormComponent } from './components/receta-form/receta-form.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { RecetaCrearComponent } from './receta-crear/receta-crear.component';
     NovedadesComponent,
     ConfiguracionComponent,
     RecetaCrearComponent,
+    RecetaEditarComponent,
+    RecetaFormComponent,
   ],
   imports: [
     CommonModule,

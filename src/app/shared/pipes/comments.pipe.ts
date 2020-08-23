@@ -7,8 +7,11 @@ import { truncate } from "lodash";
 })
 export class CommentsPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): unknown {
-    return truncate(value, { 'length': 70 });
+  transform(value: string, length: number): string {
+    if (!length) {
+      return truncate(value, { 'length': 70 });
+    }
+    return truncate(value, { 'length': length });
   }
 
 }

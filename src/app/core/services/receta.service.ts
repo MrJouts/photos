@@ -10,34 +10,48 @@ export class RecetaService {
 
   constructor() { }
 
-  getLocal(item) {
-    return JSON.parse(localStorage.getItem(item));
+  getLocal() {
+    return JSON.parse(localStorage.getItem('cook-app-recetas'));
   }
 
-  setLocal(place, item) {
-    localStorage.setItem(place, JSON.stringify(item))
+  setLocal(item) {
+    localStorage.setItem('cook-app-recetas', JSON.stringify(item))
   }
 
   getAll() {
-    if (!this.getLocal('cook-app-recetas')) {
-      this.setLocal('cook-app-recetas', RECETAS);
+    if (!this.getLocal()) {
+      this.setLocal(RECETAS);
       return of(RECETAS);
     } else {
-      return of(this.getLocal('cook-app-recetas'));
+      return of(this.getLocal());
     }
   }
 
   getById(id) {
-    let recetas = this.getLocal('cook-app-recetas');
+    let recetas = this.getLocal();
 
     console.log(id)
     return recetas.find(receta => receta.id == id);
   }
 
   createReceta(newReceta) {
-    let recetas = this.getLocal('cook-app-recetas')
+    let recetas = this.getLocal()
     newReceta.id = uuidv4();
     recetas.push(newReceta);
-    this.setLocal('cook-app-recetas', recetas);
+    this.setLocal(recetas);
+  }
+
+  updateReceta(id, recetaData) {
+    let recetas = this.getLocal();
+    let objIndex = recetas.findIndex((receta => receta.id == id));
+
+    //Update object's name property.
+    recetas[objIndex] = recetaData
+    recetas[objIndex].id = id
+
+    console.log('recestas', recetas)
+
+    this.setLocal(recetas)
+
   }
 }

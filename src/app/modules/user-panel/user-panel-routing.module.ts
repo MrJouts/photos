@@ -7,6 +7,7 @@ import { AmigosComponent } from './amigos/amigos.component';
 import { NovedadesComponent } from './novedades/novedades.component';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
 import { RecetaCrearComponent } from './receta-crear/receta-crear.component';
+import { RecetaEditarComponent } from './receta-editar/receta-editar.component';
 
 
 const routes: Routes = [{
@@ -15,6 +16,7 @@ const routes: Routes = [{
     { path: 'perfil', component: PerfilComponent },
     { path: 'recetas', component: RecetasComponent },
     { path: 'recetas/crear', component: RecetaCrearComponent },
+    { path: 'recetas/editar/:id', component: RecetaEditarComponent },
     { path: 'amigos', component: AmigosComponent },
     { path: 'novedades', component: NovedadesComponent },
     { path: 'configuracion', component: ConfiguracionComponent },

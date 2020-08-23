@@ -5,13 +5,14 @@
     </div>
 
     <div class="row">
-        <div *ngFor="let receta of recetas" class="col-6 mb-4">
-            <mat-card>
+        <div *ngFor="let receta of recetas" class="col-6">
+            <mat-card [routerLink]="['editar', receta.id]" class="mb-4">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"
-                        style="background-image: url('./assets/recetas/empanadas.png');"></div>
-                    <mat-card-title>Shiba Inu</mat-card-title>
-                    <mat-card-subtitle class="mb-0">Dog Breed</mat-card-subtitle>
+                        [style]="'background-image: url(./assets/recetas/' + (receta.img != null ? receta.img : 'placeholder.jpg')  + ');'">
+                    </div>
+                    <mat-card-title>{{ receta.title }}</mat-card-title>
+                    <mat-card-subtitle class="mb-0">{{ receta.description | comments:40 }}</mat-card-subtitle>
                 </mat-card-header>
             </mat-card>
         </div>

@@ -37,7 +37,7 @@ export const RECETAS: any[] = [
         description: null,
         img: null,
         dificultad: "intermedia",
-        porciones: 5
+        porciones: 3
     },
     {
         id: '6',
@@ -45,7 +45,7 @@ export const RECETAS: any[] = [
         description: "Tenia estos frutos rojos que compre congelados y están deliciosos, y ademas tenia que preparar una tortita de cumpleaños... todos sabemos que la combinación chocolate-crema-frutos rojos se lleva un diez de puntuación... asi que arme esta torta en 10 min de preparación (mas 25 que lleva de cocción el brownie) y la verdad es que quedo buenísima!!!",
         img: "torta_frutos_rojos.jpg",
         dificultad: "dificil",
-        porciones: 6
+        porciones: 4
     },
     {
         id: '7',

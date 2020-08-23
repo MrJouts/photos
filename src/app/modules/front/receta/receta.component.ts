@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RecetaService } from '@core/services/receta.service';
 
-
-
 @Component({
   selector: 'app-receta',
   templateUrl: './receta.component.html',
@@ -11,13 +9,11 @@ import { RecetaService } from '@core/services/receta.service';
 })
 export class RecetaComponent implements OnInit {
   receta: any = {};
-
-  id: number;
+  id: any;
 
   constructor(private recetaService: RecetaService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
     this.route.params.subscribe(params => {
       this.id = params['id'];
       this.getById(this.id)
