@@ -20,7 +20,7 @@ export class RecetasComponent implements OnInit {
   }
 
   getRecetas() {
-    this.recetaService.getAll().subscribe(recetas => {
+    this.recetaService.getFireBase().subscribe(recetas => {
       this.recetas = recetas
     });
   }

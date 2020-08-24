@@ -39,12 +39,14 @@ export class RecetaFormComponent implements OnInit {
 
     if (this.id) {
       this.getReceta()
-      this.setForm()
     }
   }
 
   getReceta() {
-    this.receta = this.recetaService.getById(this.id);
+    this.recetaService.getByIdFire(this.id).subscribe(receta => {
+      this.receta = receta
+      this.setForm()
+    })
   }
 
   setForm() {
@@ -85,9 +87,16 @@ export class RecetaFormComponent implements OnInit {
     console.log(this.recetaForm.value);
 
     if (!this.id) {
-      this.recetaService.createReceta(this.recetaForm.value)
+      // this.recetaService.createReceta(this.recetaForm.value);
+      this.recetaService.addReceta(this.recetaForm.value);
     } else {
-      this.recetaService.updateReceta(this.id, this.recetaForm.value)
+      this.receta = this.recetaForm.value;
+
+      this.receta.id = this.id;
+
+      // console.log('re', this.receta)
+      // this.recetaService.updateReceta(this.id, this.recetaForm.value);
+      this.recetaService.updReceta(this.receta)
     }
 
     this.router.navigate(['panel/recetas'], { state: { title: 'hola' } });

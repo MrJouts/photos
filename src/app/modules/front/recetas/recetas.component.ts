@@ -24,6 +24,7 @@ export class RecetasComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRecetas();
+    this.recetaService.getFireBase().subscribe(d => console.log(d))
   }
 
   getRecetas() {
