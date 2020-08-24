@@ -1,3 +1,5 @@
+@import "variables";
+
 mat-form-field {
     width: 100%;
 }
@@ -11,6 +13,7 @@ mat-form-field {
     }
 }
 
+// Ingredientes dinámicos
 #form-ingredientes {
     .mat-form-field:not(.mat-form-field-should-float) .mat-form-field-label-wrapper {
         top: -18px;
@@ -23,5 +26,29 @@ mat-form-field {
     .mat-form-field-appearance-outline .mat-form-field-infix {
         padding: 0.3em 0 0.7em;
         line-height: 120%;
+    }
+}
+
+// Text area
+textarea.mat-input-element {
+    /* width */
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background-color: #fff;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $primary-color;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: transparentize($primary-color, 0.3);
     }
 }

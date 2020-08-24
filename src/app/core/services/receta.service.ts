@@ -30,7 +30,7 @@ export class RecetaService {
   getById(id) {
     let recetas = this.getLocal();
 
-    console.log(id)
+    // console.log(id)
     return recetas.find(receta => receta.id == id);
   }
 
@@ -49,7 +49,7 @@ export class RecetaService {
     recetas[objIndex] = recetaData
     recetas[objIndex].id = id
 
-    console.log('recestas', recetas)
+    // console.log('recestas', recetas)
 
     this.setLocal(recetas)
 

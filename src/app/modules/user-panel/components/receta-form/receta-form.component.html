@@ -17,25 +17,19 @@
 
             <div id="form-ingredientes" *ngFor="let ingrediente of t.controls; let i = index">
                 <div [formGroup]="ingrediente">
-                    <div class="row">
-                        <div class="col-11">
-                            <mat-form-field appearance="outline">
-                                <!-- <mat-label>Ingrediente</mat-label> -->
-                                <input formControlName="ingrediente" matInput
-                                    [placeholder]="i == 0 ? '🍰 Harina 000 1kg': i == 1 ? '🍅 Salsa de tomates 250g' : ''"
-                                    id="i-{{i}}" (keyup.enter)="insertItem(i)">
-                            </mat-form-field>
-                        </div>
-                        <div class="col-1 p-0 pt-1">
-                            <button mat-icon-button color="warn" type="button" (click)="removeItem(i)">
-                                <mat-icon>clear</mat-icon>
-                            </button>
-                        </div>
-                    </div>
+                    <mat-form-field appearance="outline">
+                        <!-- <mat-label>Ingrediente</mat-label> -->
+                        <input formControlName="ingrediente" matInput
+                            [placeholder]="i == 0 ? '🍰 Harina 000 1kg': i == 1 ? '🍅 Salsa de tomates 250g' : ''"
+                            id="i-{{i}}" (keyup.enter)="insertItem(i)">
+                    </mat-form-field>
+                    <button mat-icon-button color="warn" type="button" (click)="removeItem(i)">
+                        <mat-icon>clear</mat-icon>
+                    </button>
                 </div>
             </div>
 
-            <button mat-flat-button type="button" color="primary" (click)="addIngrediente()" class="mt-3">Agregar
+            <button mat-flat-button type="button" color="primary" (click)="addItem()" class="mt-3">Agregar
                 ingrediente
             </button>
 
@@ -58,8 +52,9 @@
                         </mat-radio-button>
                     </mat-radio-group>
                 </div>
-                <button mat-flat-button color="primary" type="submit" [disabled]="!recetaForm.valid"
-                    class="w-100">{{ id ? 'Guardar cambios' : 'Crear receta'}}
+
+                <button mat-flat-button color="primary" type="button" [disabled]="!recetaForm.valid" class="w-100"
+                    (click)="onSubmit($event)">{{ id ? 'Guardar cambios' : 'Crear receta'}}
                 </button>
             </mat-card>
 

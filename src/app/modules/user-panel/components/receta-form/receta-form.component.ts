@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Renderer2 } from '@angular/core';
 import { RecetaService } from '@core/services/receta.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators, FormControl } from '@angular/forms';
-import { MatInput } from '@angular/material/input';
+
 
 @Component({
   selector: 'app-receta-form',
@@ -35,17 +35,7 @@ export class RecetaFormComponent implements OnInit {
       ingredientes: new FormArray([])
     });
 
-    this.t.push(
-      this.fb.group({
-        ingrediente: ''
-      })
-    )
-
-    this.t.push(
-      this.fb.group({
-        ingrediente: ''
-      })
-    )
+    this.loadIngredientes(2);
 
     if (this.id) {
       this.getReceta()
@@ -58,19 +48,40 @@ export class RecetaFormComponent implements OnInit {
   }
 
   setForm() {
-    this.recetaForm.setValue({
-      title: this.receta.title,
-      description: this.receta.description,
-      dificultad: this.receta.dificultad,
-      porciones: this.receta.porciones,
-      ingredientes: []
+    this.recetaForm = this.fb.group({
+      title: [this.receta.title],
+      description: [this.receta.description],
+      dificultad: [this.receta.dificultad],
+      porciones: [this.receta.porciones],
+      ingredientes: new FormArray([])
     });
 
+    if (this.receta.ingredientes) {
+      for (let i = 0; i < this.receta.ingredientes.length; i++) {
+        this.t.push(
+          this.fb.group({
+            ingrediente: this.receta.ingredientes[i].ingrediente
+          })
+        )
+      }
+    } else {
+
+      this.loadIngredientes(2);
+    }
+  }
+
+  loadIngredientes(x) {
+    while (x) {
+      this.t.push(
+        this.fb.group({
+          ingrediente: ''
+        })
+      )
+      x--;
+    }
   }
 
   onSubmit(e) {
-
-    e.preventDefault();
     console.log(this.recetaForm.value);
 
     if (!this.id) {
@@ -79,28 +90,17 @@ export class RecetaFormComponent implements OnInit {
       this.recetaService.updateReceta(this.id, this.recetaForm.value)
     }
 
-
-    // this.router.navigate(['panel/recetas'], { state: { title: 'hola' } });
+    this.router.navigate(['panel/recetas'], { state: { title: 'hola' } });
   }
 
   get f() { return this.recetaForm.controls; }
   get t() { return this.f.ingredientes as FormArray; }
 
-  addIngrediente() {
-    this.t.push(
-      this.fb.group({
-        ingrediente: ''
-      })
-    )
+  addItem() {
+    this.loadIngredientes(1);
 
     // Autofocus en el ultimo elemento del array
-    setTimeout(() => {
-      let elem = this.renderer.selectRootElement('#i-' + (this.t.length - 1));
-      elem.focus();
-    }, 0);
-
-
-    console.log(this.recetaForm.value)
+    this.focusInput(this.t.length, -1);
   }
 
   removeItem(index) {
@@ -116,10 +116,13 @@ export class RecetaFormComponent implements OnInit {
     )
 
     // Autofocus en el elemento siguiente
+    this.focusInput(index, 1);
+  }
+
+  focusInput(index, x) {
     setTimeout(() => {
-      let elem = this.renderer.selectRootElement('#i-' + (index + 1));
+      let elem = this.renderer.selectRootElement('#i-' + (index + x));
       elem.focus()
     }, 0);
-
   }
 }

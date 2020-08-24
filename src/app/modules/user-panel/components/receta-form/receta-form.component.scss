@@ -25,3 +25,15 @@ button {
 .form-control:first-child {
     margin-right: 2rem;
 }
+
+#form-ingredientes {
+    position: relative;
+}
+
+.mat-icon-button {
+    position: absolute;
+    right: 0rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px !important;
+}
