@@ -11,6 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 const components = [
@@ -24,7 +25,8 @@ const components = [
     MatSelectModule,
     MatCheckboxModule,
     MatListModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule
 ]
 
 @NgModule({

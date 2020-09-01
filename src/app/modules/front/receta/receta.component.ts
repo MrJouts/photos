@@ -21,6 +21,8 @@ export class RecetaComponent implements OnInit {
   }
 
   getById(id) {
-    this.receta = this.recetaService.getById(id)
+    this.recetaService.getRecetaById(id).subscribe(receta => {
+      this.receta = receta
+    })
   }
 }

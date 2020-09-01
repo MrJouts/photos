@@ -9,7 +9,6 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RecetaService {
-
   recetasCollection: AngularFirestoreCollection;
   recetas: Observable<any[]>;
   receta: Observable<any>;
@@ -26,8 +25,7 @@ export class RecetaService {
     }))
   }
 
-
-  getFireBase() {
+  getAll() {
     return this.recetas;
   }
 
@@ -35,66 +33,24 @@ export class RecetaService {
     this.recetasCollection.add(receta);
   }
 
-  updReceta(receta) {
+  updateReceta(receta) {
     this.recetaDoc = this.db.doc(`recetas/${receta.id}`);
 
     this.recetaDoc.update(receta);
   }
 
-  getByIdFire(id) {
-    console.log('id r', id)
-    // return this.recetasCollection.doc(id).snapshotChanges();
-
-    this.recetaDoc = this.db.doc<any>(`recetas/${id}`);
-    return this.receta = this.recetaDoc.valueChanges();
-
-    this.recetaDoc = this.db.doc(`recetas/${id}`);
-    return this.recetaDoc.valueChanges();
+  deleteReceta(receta) {
+    this.recetaDoc = this.db.doc(`recetas/${receta.id}`);
+    this.recetaDoc.delete();
   }
 
-
-  getLocal() {
-    return JSON.parse(localStorage.getItem('cook-app-recetas'));
+  getRecetaById(id) {
+    this.recetaDoc = this.db.doc<any>(`recetas/${id}`);
+    return this.receta = this.recetaDoc.valueChanges();
   }
 
   setLocal(item) {
     localStorage.setItem('cook-app-recetas', JSON.stringify(item))
   }
 
-  getAll() {
-    if (!this.getLocal()) {
-      this.setLocal(RECETAS);
-      return of(RECETAS);
-    } else {
-      return of(this.getLocal());
-    }
-  }
-
-  getById(id) {
-    let recetas = this.getLocal();
-
-    // console.log(id)
-    return recetas.find(receta => receta.id == id);
-  }
-
-  createReceta(newReceta) {
-    let recetas = this.getLocal()
-    newReceta.id = uuidv4();
-    recetas.push(newReceta);
-    this.setLocal(recetas);
-  }
-
-  updateReceta(id, recetaData) {
-    let recetas = this.getLocal();
-    let objIndex = recetas.findIndex((receta => receta.id == id));
-
-    //Update object's name property.
-    recetas[objIndex] = recetaData
-    recetas[objIndex].id = id
-
-    // console.log('recestas', recetas)
-
-    this.setLocal(recetas)
-
-  }
 }

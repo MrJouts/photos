@@ -1,3 +1,7 @@
+<ng-template #myTemplate>
+    <h1>Dialog</h1>
+</ng-template>
+
 <section>
 
     <div class="row">
@@ -12,9 +16,14 @@
             </p>
 
             <p>Amigos: 58</p>
-            <p>Recetas: 40</p>
+            <p #eliminarPerfil>Recetas: 40</p>
 
-            <button mat-flat-button color="primary">Editar perfil</button>
+            <button mat-flat-button color="primary" class="mr-2" (click)="verElement()">Ver #element</button>
+
+            <button mat-flat-button color="primary" class="mr-2">Editar perfil</button>
+
+            <button mat-flat-button color="warn" (click)="dialog.open(myTemplate)">Eliminar
+                perfil</button>
 
 
         </div>

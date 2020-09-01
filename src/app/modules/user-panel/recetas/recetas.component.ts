@@ -20,9 +20,13 @@ export class RecetasComponent implements OnInit {
   }
 
   getRecetas() {
-    this.recetaService.getFireBase().subscribe(recetas => {
+    this.recetaService.getAll().subscribe(recetas => {
       this.recetas = recetas
     });
+  }
+
+  deleteReceta(event, receta) {
+    this.recetaService.deleteReceta(receta);
   }
 
 }

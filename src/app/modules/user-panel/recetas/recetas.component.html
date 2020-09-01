@@ -6,14 +6,20 @@
 
     <div class="row">
         <div *ngFor="let receta of recetas" class="col-6">
-            <mat-card [routerLink]="['editar', receta.id]" class="mb-4">
+            <mat-card class="mb-4">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"
-                        [style]="'background-image: url(./assets/recetas/' + (receta.img != null ? receta.img : 'placeholder.jpg')  + ');'">
+                        [style]="'background-image: url(./assets/recetas/' + (receta.img != null ? receta.img : 'placeholder.jpg')  + ');'"
+                        [routerLink]="['editar', receta.id]">
                     </div>
-                    <mat-card-title>{{ receta.title }}</mat-card-title>
+                    <mat-card-title [routerLink]="['editar', receta.id]">{{ receta.title }}</mat-card-title>
                     <mat-card-subtitle class="mb-0">{{ receta.description | comments:40 }}</mat-card-subtitle>
                 </mat-card-header>
+
+                <button mat-icon-button color="warn" (click)="deleteReceta($event, receta)">
+                    <mat-icon>clear</mat-icon>
+                </button>
+
             </mat-card>
         </div>
     </div>

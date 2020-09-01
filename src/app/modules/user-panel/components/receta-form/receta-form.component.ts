@@ -43,7 +43,7 @@ export class RecetaFormComponent implements OnInit {
   }
 
   getReceta() {
-    this.recetaService.getByIdFire(this.id).subscribe(receta => {
+    this.recetaService.getRecetaById(this.id).subscribe(receta => {
       this.receta = receta
       this.setForm()
     })
@@ -96,7 +96,7 @@ export class RecetaFormComponent implements OnInit {
 
       // console.log('re', this.receta)
       // this.recetaService.updateReceta(this.id, this.recetaForm.value);
-      this.recetaService.updReceta(this.receta)
+      this.recetaService.updateReceta(this.receta)
     }
 
     this.router.navigate(['panel/recetas'], { state: { title: 'hola' } });
