@@ -1,0 +1,31 @@
+table {
+    // width: 800px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 20px;
+    // overflow: hidden;
+    box-shadow: none;
+}
+
+.table-wrapper {
+    // width: 400px;
+    // overflow-x: auto;
+    // padding-bottom: 2rem;
+}
+
+mat-header-cell {
+    writing-mode: vertical-rl;
+    // text-orientation: inherit;
+    transform: rotate(180deg);
+    padding-top: 1rem;
+}
+
+mat-cell {
+    text-align: center;
+    justify-content: center;
+
+    &:first-of-type,
+    &:last-of-type {
+        padding: 0;
+    }
+}

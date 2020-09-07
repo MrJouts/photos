@@ -37,3 +37,8 @@ button {
     transform: translateY(-50%);
     border-radius: 5px !important;
 }
+
+textarea.mat-input-element {
+    line-height: 150%;
+    padding-right: 0.25rem;
+}

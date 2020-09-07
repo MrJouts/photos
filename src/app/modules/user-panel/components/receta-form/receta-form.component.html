@@ -8,7 +8,8 @@
 
             <mat-form-field appearance="outline">
                 <mat-label>Descripción</mat-label>
-                <textarea formControlName="description" id="description" matInput #description></textarea>
+                <textarea formControlName="description" id="description" matInput #description matAutosize
+                    matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="10"></textarea>
             </mat-form-field>
 
             <div class="mb-3">
@@ -18,7 +19,6 @@
             <div id="form-ingredientes" *ngFor="let ingrediente of t.controls; let i = index">
                 <div [formGroup]="ingrediente">
                     <mat-form-field appearance="outline">
-                        <!-- <mat-label>Ingrediente</mat-label> -->
                         <input formControlName="ingrediente" matInput
                             [placeholder]="i == 0 ? '🍰 Harina 000 1kg': i == 1 ? '🍅 Salsa de tomates 250g' : ''"
                             id="i-{{i}}" (keyup.enter)="insertItem(i)">

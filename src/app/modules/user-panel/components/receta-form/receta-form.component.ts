@@ -3,14 +3,12 @@ import { RecetaService } from '@core/services/receta.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators, FormControl } from '@angular/forms';
 
-
 @Component({
   selector: 'app-receta-form',
   templateUrl: './receta-form.component.html',
   styleUrls: ['./receta-form.component.scss']
 })
 export class RecetaFormComponent implements OnInit {
-
   @Input() id: any;
   receta;
   recetaForm: FormGroup;
@@ -34,6 +32,8 @@ export class RecetaFormComponent implements OnInit {
       porciones: [2],
       ingredientes: new FormArray([])
     });
+
+
 
     this.loadIngredientes(2);
 
