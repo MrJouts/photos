@@ -47,7 +47,7 @@
                         <mat-card *ngFor="let receta of recetasFiltradas | searchFilter:searchText.value" class="mb-3">
 
                             <img class="img-fluid mr-3"
-                                [src]="receta.img != null ? './assets/recetas/' + receta.img : './assets/recetas/placeholder.jpg'"
+                                [src]="receta.img != null ? receta.img : './assets/recetas/placeholder.jpg'"
                                 alt="{{receta.title}}" [routerLink]="['/receta', receta.id]">
                             <div>
                                 <h3 class=" card-title mb-2" [routerLink]="['/receta', receta.id]">{{ receta.title }}

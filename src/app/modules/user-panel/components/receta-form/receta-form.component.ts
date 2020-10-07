@@ -3,6 +3,11 @@ import { RecetaService } from '@core/services/receta.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators, FormControl } from '@angular/forms';
 
+import { AngularFireStorage } from "@angular/fire/storage";
+import { map, finalize } from "rxjs/operators";
+import { Observable } from "rxjs";
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-receta-form',
   templateUrl: './receta-form.component.html',
@@ -16,12 +21,15 @@ export class RecetaFormComponent implements OnInit {
   dificultadList: any[] = ['facil', 'intermedia', 'dificil'];
   porcionesList: any[] = [1, 2, 3, 4];
 
+  
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private recetaService: RecetaService,
     private fb: FormBuilder,
-    private renderer: Renderer2) { }
+    private renderer: Renderer2,
+    private storage: AngularFireStorage,
+    private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
@@ -134,4 +142,64 @@ export class RecetaFormComponent implements OnInit {
       elem.focus()
     }, 0);
   }
+
+
+  title = "cloudsSorage";
+  selectedFile: File = null;
+  fire;
+  downloadURL: Observable<string>;
+
+  imgUrl;
+
+
+  onFileSelected(event) {
+    let name = Date.now();
+    const file = event.target.files[0];
+    const filePath = `recetas/${name}`;
+    
+    var reader = new FileReader();
+
+    reader.readAsDataURL(file); 
+
+    let url = URL.createObjectURL(file);
+    reader.onload = (_event) => { 
+      this.imgUrl = reader.result; 
+    }
+    // this.imgUrl = reader.result;
+
+    // console.log('url', url);
+    // let src = this.sanitizer.bypassSecurityTrustStyle(url);
+
+
+    // console.log('src', src);
+    // this.imgUrl = src;
+
+
+    // const fileRef = this.storage.ref(filePath);
+    // const task = this.storage.upload(`recetas/${name}`, file);
+    // task
+    //   .snapshotChanges()
+    //   .pipe(
+    //     finalize(() => {
+    //       this.downloadURL = fileRef.getDownloadURL();
+    //       this.downloadURL.subscribe(url => {
+    //         if (url) {
+    //           this.fire = url;
+    //         }
+    //         console.log(this.fire);
+    //       });
+    //     })
+    //   )
+    //   .subscribe(url => {
+    //     if (url) {
+    //       console.log('url', url);
+    //       this.imgUrl = url;
+    //     }
+    //   });
+  }
+
+  quitarImagen() {
+    this.imgUrl = null;
+  }
+
 }

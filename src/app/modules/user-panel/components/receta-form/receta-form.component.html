@@ -36,6 +36,23 @@
         </div>
         <div class="col-4">
             <mat-card>
+
+                <div class="form-control">
+                    <label>Portada</label>
+                    <div class="form-img" [ngClass]="imgUrl ? 'uploaded' : ''">
+                        <input type="file" id="file" #userPhoto (change)="onFileSelected($event)" name="image"
+                            autocomplete="off" />
+                        <span>Agregar imagen</span>
+
+                        <img *ngIf="imgUrl" src="{{ imgUrl }}" alt="imagen">
+
+                        <button mat-icon-button color="warn" type="button" (click)="quitarImagen()"></button>
+
+                        <button *ngIf="imgUrl" type="button">borrar</button>
+
+                    </div>
+                </div>
+
                 <div class="form-control">
                     <label>Porciones</label>
                     <mat-radio-group aria-label="Select an option" color="primary" formControlName="porciones">

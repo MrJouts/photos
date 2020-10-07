@@ -9,7 +9,7 @@
             <mat-card class="mb-4">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"
-                        [style]="'background-image: url(./assets/recetas/' + (receta.img != null ? receta.img : 'placeholder.jpg')  + ');'"
+                        [style]="'background-image: url(' + (receta.img != null ? receta.img : './assets/recetas/placeholder.jpg')  + ');'"
                         [routerLink]="['editar', receta.id]">
                     </div>
                     <mat-card-title [routerLink]="['editar', receta.id]">{{ receta.title }}</mat-card-title>
